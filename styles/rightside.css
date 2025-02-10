@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  gap: 10rem;
+}
+
+.rightside {
+  width: 482px;
+  height: 344px;
+  margin-left: 4rem;
+  margin-top: 5.5rem;
+  
+  & h2 {
+    font: var(--label-large);
+    color: var(--content-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  & p {
+    white-space: nowrap;
+    font: var(--paragrph-large);
+    color: var(--content-secondary);
+  }
+}
