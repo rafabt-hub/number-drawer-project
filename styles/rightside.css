@@ -21,3 +21,118 @@
     color: var(--content-secondary);
   }
 }
+
+.numbers {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-left: .5rem;
+
+  & p {
+    font: var(--label-medium);
+    color: var(--content-secondary);
+  }
+}
+
+input[type="number"] {
+  width: 7rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: .5rem;
+  border: 2px solid transparent;
+  outline: none;
+  text-align: center;
+  font: var(--display-small);
+  color: var(--content-primary);
+  background-color: var(--background-secondary);
+}
+
+input:hover, 
+  input:focus {
+    border: 2px solid transparent;
+    background-image: 
+    linear-gradient(var(--background-secondary), var(--background-secondary)),
+    linear-gradient(90deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+.fields {
+  max-width: 5.5rem;
+  justify-items: center;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--content-primary);
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background: linear-gradient(90deg, #D586E0 0%, #91A1FA 98.93%);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(10px);
+  }
+
+  .btn-switch {
+    display: flex;
+    margin-top: 2rem;
+    gap: 1rem;
+
+    & label {
+      font: var(--label-small);
+      color: var(--content-primary);
+    }
+  }
+
+  .fields p {
+    transition: color 0.3s;
+  }
+
+  .fields:focus-within p {
+    color: var(--background-brand);
+  }

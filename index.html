@@ -49,9 +49,42 @@
      <p>defina o intervalo e a quantidade de números, clique em "Sortear" <br> e veja os resultados na tela. É rápido e fácil!</p>
     </div>
 
+    <div class="numbers">
+      <div class="fields">
+       <p>NÚMEROS</p>
+       <label>
+        <input type="number" id="quantity" name="quantity" placeholder="2" required>
+       </label>
+      </div>
+      <div class="fields">
+       <p>DE</p>
+       <label>
+        <input type="number" id="from" name="from" placeholder="0" required>
+       </label>
+      </div>
+      <div class="fields">
+       <p>ATÉ</p>
+       <label>
+        <input type="number" id="to" name="to" placeholder="100" required>
+       </label>
+      </div>
+    </div>
+
+    <div class="btn-switch">
+      <label class="switch">
+        <input type="checkbox" id="norepeat">
+        <span class="slider"></span>
+      </label>
+      <label for="norepeat">Não repetir número</label>
+    </div>
+
+    <button class="btn-draw">
+      Sortear
+      <span class="seta"><img src="assets/icons/arrowicon.svg" alt=""></span>
+    </button>
     
    </div>
- </div>
+  </div>
 
 
   <script src="scripts.js"></script>
