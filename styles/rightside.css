@@ -170,3 +170,33 @@ input[type=number]::-webkit-outer-spin-button,
   .btn-draw:hover .arrow {
     transform: translateX(8px);
   }
+
+  .topic-mobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      margin-bottom: 5rem;
+    }
+    
+    .rightside {
+      margin-top: 2rem;
+    }
+
+    .topic-desktop {
+      display: none;
+    }
+  
+    .topic-mobile {
+      display: block;
+      width: auto;
+    }
+
+    .btn-draw {
+      width: 319px;
+    }
+  }

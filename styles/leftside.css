@@ -61,3 +61,15 @@
   align-items: center;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+
+  .leftside {
+    height: auto;
+    
+    & h2 {
+      font: var(--display-medium);
+      color: var(--content-primary) ;
+    }
+  }
+}
