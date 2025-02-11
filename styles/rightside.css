@@ -6,7 +6,7 @@
 .rightside {
   width: 482px;
   height: 344px;
-  margin-left: 4rem;
+  margin-left: 10rem;
   margin-top: 5.5rem;
   
   & h2 {
@@ -135,4 +135,38 @@ input[type=number]::-webkit-outer-spin-button,
 
   .fields:focus-within p {
     color: var(--background-brand);
+  }
+
+  .btn-draw {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 482px;
+    height: 56px;
+    margin-top: 2rem;
+    background-color: var(--background-tertiary);
+    justify-content: center;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font: var(--label-medium);
+    color: var(--content-primary);
+  }
+
+  .btn-draw:hover {
+    border: 2px solid transparent;
+    background-image: 
+    linear-gradient(var(--background-secondary), var(--background-secondary)),
+    linear-gradient(90deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .arrow {
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .btn-draw:hover .arrow {
+    transform: translateX(8px);
   }
