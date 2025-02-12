@@ -87,7 +87,7 @@ function startDiceAnimation(quantity) {
           resultDiv.style.color = "#C58DE7";
           completed++;
           if (completed === quantity) {
-            redrawButton.style.display = "block";
+            redrawButton.style.display = "flex";
             redrawButton.addEventListener('click', () => location.reload());
           }
         }, 500);
