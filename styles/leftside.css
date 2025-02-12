@@ -50,6 +50,7 @@
 
   & p {
     margin-left: 12.5rem;
+    width: 358px;
     font: var(--paragraph-small);
     color: var(--content-secondary);
   }
