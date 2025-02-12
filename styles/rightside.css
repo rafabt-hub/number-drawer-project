@@ -239,9 +239,7 @@ input[type=number]::-webkit-outer-spin-button,
   
   .result {
     position: absolute;
-    font-size: 2rem;
-    font-weight: bold;
-    color: black;
+    font: var(--display-small);
     transition: color 0.5s ease-in-out;
   }
   
