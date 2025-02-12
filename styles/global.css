@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: var(--background-primary);
+}
+
 :root {
   --content-primary: #FFFFFF;
   --content-secondary: #C7C9CC;
@@ -41,6 +45,3 @@
   --label-small: 600 16px/150% var(--font-family);
 }
 
-html {
-  background-color: var(--background-primary);
-}
