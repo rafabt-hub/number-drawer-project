@@ -41,9 +41,9 @@ function displayResult(numbers) {
   rightSide.innerHTML = '';
 
   let diceHTML = numbers.map((num, index) => `
-    <div class="draw2" id="draw2-${index}">
+    <div class="draw2" id="draw2-${index}" style="opacity: 0;">
       <img src="assets/icons/diceiconempty.svg" alt="dice" class="imgbgdice">
-      <div class="result" id="result-${index}">${num}</div>
+      <div class="result" id="result-${index}" color: #030203">${num}</div>
     </div>
   `).join('');
 
@@ -63,35 +63,40 @@ function displayResult(numbers) {
     </div>
   `;
 
-  startDiceAnimation(numbers.length);
+  startDiceAnimation(numbers);
 }
 
-function startDiceAnimation(quantity) {
+function startDiceAnimation(numbers) {
   let completed = 0;
   const redrawButton = document.getElementById('btn-redraw');
 
-  for (let i = 0; i < quantity; i++) {
-    setTimeout(() => {
-      const draw2Div = document.getElementById(`draw2-${i}`);
-      const diceImage = draw2Div.querySelector('.imgbgdice');
-      const resultDiv = document.getElementById(`result-${i}`);
+  function animateNumber(index) {
+    if (index >= numbers.length) {
+      redrawButton.style.display = "flex";
+      redrawButton.addEventListener('click', () => location.reload());
+      return;
+    }
 
-      resultDiv.style.opacity = "1";
-      resultDiv.style.color = "#030203";
+    const draw2Div = document.getElementById(`draw2-${index}`);
+    const diceImage = draw2Div.querySelector('.imgbgdice');
+    const resultDiv = document.getElementById(`result-${index}`);
 
-      diceImage.style.animation = "spinIn 1s ease-out forwards";
+    draw2Div.style.opacity = "1";
+    diceImage.style.animation = "fadeIn 0.5s ease-out forwards";
+
+    diceImage.addEventListener("animationend", function () {
+      diceImage.style.animation = "spinMove 1.2s ease-out forwards";
+
       diceImage.addEventListener("animationend", function () {
         setTimeout(() => {
           diceImage.style.display = "none";
           resultDiv.style.opacity = "1";
           resultDiv.style.color = "#C58DE7";
-          completed++;
-          if (completed === quantity) {
-            redrawButton.style.display = "flex";
-            redrawButton.addEventListener('click', () => location.reload());
-          }
+          animateNumber(index + 1);
         }, 500);
-      });
-    }, i * 1200);
+      }, { once: true });
+    }, { once: true });
   }
+
+  animateNumber(0);
 }
